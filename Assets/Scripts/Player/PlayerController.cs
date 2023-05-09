@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviour
 
     private bool jumping = false; //true when player is jumping
     private Vector3 movement = new Vector3(); //not set by user
-    public Transform mesh;
-    float scaleTarget = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -51,16 +49,12 @@ public class PlayerController : MonoBehaviour
             {
                 jumping = false;
                 movement.y *= -0.4f;
-                scaleTarget = 0.25f;
             }
             else
             {
                 movement.y -= (jumpWeight * Time.deltaTime);
             }
         }
-
-        mesh.localScale = Vector3.Lerp(mesh.localScale, new Vector3(1, scaleTarget, 1), Time.deltaTime * 6);
-        scaleTarget = Mathf.Lerp(scaleTarget, 1, Time.deltaTime * 12);
 
         cc.Move(movement * speed * Time.deltaTime); //move, collisions handled in character controller
     }
