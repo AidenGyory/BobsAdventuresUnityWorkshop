@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal"); //left-right arrows or A-D keys
-        movement.z = Input.GetAxis("Vertical"); //up-down arrows or W-S keys
+        movement.x = -Input.GetAxis("Horizontal"); //left-right arrows or A-D keys
+        movement.z = -Input.GetAxis("Vertical"); //up-down arrows or W-S keys
 
         if (!jumping)
         {
