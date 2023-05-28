@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         this.dialogue = dialogue;
 
         PlayerController.instance.Lock();
-        CameraController.instance.Lock(dialogue.cameraPoint.position);
+        CameraController.instance.Lock(dialogue.cameraPoint.position, dialogue.cameraDistance);
         lineIndex = -1;
 
         NextLine();
@@ -116,6 +116,7 @@ public class DialogueManager : MonoBehaviour
         textBox.DOSizeDelta(new Vector2(), 0.5f).SetEase(Ease.InBack);
 
         PlayerController.instance.Unlock();
+        CameraController.instance.Unlock();
     }
 
     void DisableUI()

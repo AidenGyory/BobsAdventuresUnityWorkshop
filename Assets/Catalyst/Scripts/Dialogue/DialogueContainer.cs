@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueContainer : MonoBehaviour
 {
     public Transform cameraPoint;
+    public float cameraDistance;
     public List<DialogueLine> lines;
     bool overlapped = false;
 

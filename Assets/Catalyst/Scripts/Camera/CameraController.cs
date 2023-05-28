@@ -56,13 +56,19 @@ public class CameraController : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0);
 
-        transform.LookAt(lookPosition + offset);
-
         transform.position = (lookPosition + offset) + rotation * direction;
+
+        transform.LookAt(lookPosition + offset);
     }
 
-    public void Lock(Vector3 position)
+    public void Lock(Vector3 position, float cameraDistance)
     {
         lookPosition = position;
+        distance = cameraDistance;
+    }
+
+    public void Unlock()
+    {
+        distance = defaultDistance;
     }
 }

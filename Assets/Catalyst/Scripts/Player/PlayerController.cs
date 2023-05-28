@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))] //auto add a character controller if the gameobject doesn't have one
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement = new Vector3(); //not set by user
     bool locked = false;
     public static PlayerController instance;
+    PlayerInput playerInput;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>(); //get reference to character controller component
+        playerInput = GetComponent<PlayerInput>();
         cam = Camera.main.transform;
     }
 
@@ -70,20 +73,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        SetMovement();
+        Vector3 rotatedMove = Quaternion.Euler(0, cam.rotation.eulerAngles.y, 0) * playerInput.GetMovementInput();
+        movement.x = rotatedMove.x;
+        movement.z = rotatedMove.z;
 
         DoAnimation();
 
         cc.Move(movement * speed * Time.deltaTime); //move, collisions handled in character controller
-    }
-
-    void SetMovement()
-    {
-        float xMove = movement.x = Input.GetAxis("Horizontal"); //left-right arrows or A-D keys
-        float zMove = movement.z = Input.GetAxis("Vertical"); //up-down arrows or W-S keys
-        Vector3 rotatedMove = Quaternion.Euler(0, cam.rotation.eulerAngles.y, 0) * new Vector3(xMove, 0, zMove);
-        movement.x = rotatedMove.x;
-        movement.z = rotatedMove.z;
     }
 
     void DoAnimation()
