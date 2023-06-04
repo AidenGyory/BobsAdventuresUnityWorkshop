@@ -633,8 +633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832a1776aad519941b09290e8a94fc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  cam: {fileID: 0}
   speed: 5
   gravity: 10
   jumpWeight: 10
   jumpHeight: 5
-  mesh: {fileID: 519193527}
