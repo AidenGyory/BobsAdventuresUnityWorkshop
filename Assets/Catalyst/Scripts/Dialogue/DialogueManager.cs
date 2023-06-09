@@ -7,7 +7,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject ui, uiPrompt;
+    public GameObject ui;
     public TextMeshProUGUI nameText, text;
     public RectTransform textBox;
     public CanvasGroup cg;
@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         ui.SetActive(false);
-        uiPrompt.SetActive(false);
     }
 
     private void Update()
@@ -52,8 +51,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        InteractManager.instance.HidePrompt();
+
         ui.SetActive(true);
-        uiPrompt.SetActive(false);
 
         DOTween.Kill(cg);
         DOTween.Kill(textBox);
@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogue = null;
-        uiPrompt.SetActive(true);
+        InteractManager.instance.ShowPrompt("Talk");
 
         cg.DOFade(0, 0.5f).OnComplete(DisableUI);
         textBox.DOSizeDelta(new Vector2(), 0.5f).SetEase(Ease.InBack);

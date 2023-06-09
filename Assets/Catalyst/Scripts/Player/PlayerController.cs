@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool running = false;
+
         if (!jumping)
         {
             if (Input.GetKeyDown(KeyCode.Space) && !locked)
@@ -55,11 +57,14 @@ public class PlayerController : MonoBehaviour
             {
                 movement.y -= (jumpWeight * Time.deltaTime);
             }
+            running = Input.GetKey(KeyCode.LeftShift);
+
         }
         else
         {
             if (cc.isGrounded)
             {
+                animator.SetTrigger("Landed");
                 jumping = false;
             }
             else
@@ -68,18 +73,24 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        animator.SetBool("Grounded", cc.isGrounded);
+        animator.speed = 1;
+
         if (locked)
         {
             return;
         }
 
+        float speed = running ? 2 : 1;
+
         Vector3 rotatedMove = Quaternion.Euler(0, cam.rotation.eulerAngles.y, 0) * playerInput.GetMovementInput();
-        movement.x = rotatedMove.x;
-        movement.z = rotatedMove.z;
+        movement.x = rotatedMove.x * speed;
+        movement.z = rotatedMove.z * speed;
+        animator.speed = speed;
 
         DoAnimation();
 
-        cc.Move(movement * speed * Time.deltaTime); //move, collisions handled in character controller
+        cc.Move(movement * this.speed * Time.deltaTime); //move, collisions handled in character controller
     }
 
     void DoAnimation()
