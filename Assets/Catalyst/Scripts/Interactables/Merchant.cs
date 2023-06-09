@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class Merchant : Interactable
 {
-    private void Start()
-    {
-        
-    }
+    public int keyCost = 100000;
 }
