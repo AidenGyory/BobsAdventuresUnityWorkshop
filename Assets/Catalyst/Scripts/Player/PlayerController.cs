@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))] //auto add a character controller if the gameobject doesn't have one
-[RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
@@ -83,7 +82,8 @@ public class PlayerController : MonoBehaviour
 
         float speed = running ? 2 : 1;
 
-        Vector3 rotatedMove = Quaternion.Euler(0, cam.rotation.eulerAngles.y, 0) * playerInput.GetMovementInput();
+        Vector3 moveInput = playerInput != null ? playerInput.GetMovementInput() : new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 rotatedMove = Quaternion.Euler(0, cam.rotation.eulerAngles.y, 0) * moveInput;
         movement.x = rotatedMove.x * speed;
         movement.z = rotatedMove.z * speed;
         animator.speed = speed;

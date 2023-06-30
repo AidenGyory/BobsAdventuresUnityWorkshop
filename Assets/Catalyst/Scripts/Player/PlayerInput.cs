@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            movement.x = -1;
+            movement.z = 1;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
@@ -18,11 +18,11 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            movement.z = -1;
+            movement.x = -1;
         }
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            movement.z = 1;
+            movement.z = -1;
         }
 
         return movement;
