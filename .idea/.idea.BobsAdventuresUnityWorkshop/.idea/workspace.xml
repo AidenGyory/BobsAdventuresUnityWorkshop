@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c91a5ff-b14f-4c7c-8f46-5a0cab2f078d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Catalyst/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Catalyst/Scenes/Level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BobsAdventuresUnityWorkshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BobsAdventuresUnityWorkshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Catalyst/Prefabs/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Catalyst/Prefabs/Player_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +69,8 @@
       <workItem from="1685076882133" duration="13000" />
       <workItem from="1685081902014" duration="12000" />
       <workItem from="1687055158527" duration="625000" />
+      <workItem from="1688102946084" duration="5000" />
+      <workItem from="1688103013923" duration="4000" />
     </task>
     <servers />
   </component>

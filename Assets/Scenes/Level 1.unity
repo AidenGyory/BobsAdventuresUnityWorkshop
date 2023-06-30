@@ -2469,14 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPoint: {fileID: 869999496}
   cameraDistance: 25
-  lines:
-  - name: Steve
-    line: Oh no...
-  - name: Steve
-    line: I need a way to cross this <b>foam pit,</b> but it's way too far for me
-      to cross...
-  - name: Steve
-    line: What will I do?! I'll never make it to the cool hat club on time now...
+  dialogueObject: {fileID: 11400000, guid: a65fc9fe13f32974bbcbe66336eb4309, type: 2}
 --- !u!1001 &1958210100
 PrefabInstance:
   m_ObjectHideFlags: 0

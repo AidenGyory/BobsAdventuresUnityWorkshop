@@ -6,7 +6,8 @@ public class DialogueContainer : Interactable
 {
     public Transform cameraPoint;
     public float cameraDistance;
-    public List<DialogueLine> lines;
+    public DialogueObject defaultDialogue;
+    public List<DialogueCondition> conditionalDialogues;
 
     private void Start()
     {
@@ -17,11 +18,25 @@ public class DialogueContainer : Interactable
     {
         DialogueManager.instance.StartDialogue(this);
     }
+
+    public DialogueObject GetDialogue()
+    {
+        foreach (DialogueCondition condition in conditionalDialogues)
+        {
+            if (condition.condition.Evaluate() == condition.evaluateTo)
+            {
+                return condition.dialogue;
+            }
+        }
+
+        return defaultDialogue;
+    }
 }
 
 [System.Serializable]
-public class DialogueLine
+public class DialogueCondition
 {
-    public string name;
-    public string line;
+    public Condition condition;
+    public bool evaluateTo = true;
+    public DialogueObject dialogue;
 }

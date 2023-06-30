@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7398a43ee20d484f9148329fbada2d9, type: 3}
+  m_Name: HatClub_AcceptedEntry
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Hat Goon #1
+    line: W...wh...
+  - name: Hat Goon #1
+    line: WOAH!!!!
+  - name: Hat Goon #1
+    line: Hat Goon #2, are you seeing this?!
+  - name: Hat Goon #2
+    line: I'm seein' it, alright!
+  - name: Hat Goon #2
+    line: I'm seein' the <b>coolest hat I've ever seen!!!</b>
+  - name: Hat Goon #1
+    line: Your hat, pal, it's....
+  - name: Hat Goon #1
+    line: It's magnificent!!! Out of this world!!! Cooler than anything imaginable!!!
+  - name: Hat Goon #2
+    line: Please, come right through!!! Consider yourself a VIP of the Cool Hat Club!
+  - name: Hat Goon #2
+    line: Man, I wish my hat was that cool...
