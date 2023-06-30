@@ -2469,7 +2469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPoint: {fileID: 869999496}
   cameraDistance: 25
-  dialogueObject: {fileID: 11400000, guid: a65fc9fe13f32974bbcbe66336eb4309, type: 2}
+  defaultDialogue: {fileID: 11400000, guid: a65fc9fe13f32974bbcbe66336eb4309, type: 2}
+  conditionalDialogues: []
 --- !u!1001 &1958210100
 PrefabInstance:
   m_ObjectHideFlags: 0
