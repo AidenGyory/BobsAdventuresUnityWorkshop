@@ -16,9 +16,10 @@ MonoBehaviour:
   - name: Merchant
     line: 'Ohoho! Yes! that''s a lot of dough! '
   - name: Merchant
-    line: 'How did you get some many coins? '
+    line: '...How did you get some many coins? '
   - name: Merchant
-    line: '...It doesn''t matter.. Here is my Secret! take this Itme to the Creativity
-      Guardians! '
+    line: 'I guess It doesn''t matter.. Here! Take this Item to the Creativity Guardians! '
   - name: Merchant
     line: If you can solve their riddles, they will give you the power of creation!
+  - name: Merchant
+    line: With the power of creation you can make whatever you want! Even a hat...

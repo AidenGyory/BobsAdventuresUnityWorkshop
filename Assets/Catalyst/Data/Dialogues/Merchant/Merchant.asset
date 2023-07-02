@@ -16,7 +16,12 @@ MonoBehaviour:
   - name: Merchant
     line: 'Ohoho! Hello there young one! '
   - name: Merchant
-    line: Why yes! I can totally tell you a secret to getting into the cool hat club!
+    line: Why yes! I can totally tell you the secret to getting into the cool hat
+      club!
   - name: Merchant
-    line: Secrets don't come cheap my friend! Bring me 1,000,000 coins and I'll tell
-      you my secrets!
+    line: To get into the Hat club you'll need to make a hat!
+  - name: Merchant
+    line: How do you make a hat? Well you'll need to use Blender!
+  - name: Merchant
+    line: 'How do you use Blender? WelI tell you what, you bring me 1,000,000 coins
+      and I''ll tell you! '
