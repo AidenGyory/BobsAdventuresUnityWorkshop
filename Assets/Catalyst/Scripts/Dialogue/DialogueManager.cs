@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class DialogueManager : MonoBehaviour
     public RectTransform textBox;
     public CanvasGroup cg;
     public static DialogueManager instance;
-    DialogueContainer dialogue;
+    DialogueObject dialogue;
+    UnityEvent onEnd;
     int lineIndex = -1;
     bool rowFinished = false;
 
@@ -51,6 +53,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        onEnd = null;
         InteractManager.instance.HidePrompt();
 
         ui.SetActive(true);
@@ -63,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         cg.DOFade(1, 0.5f);
         textBox.DOSizeDelta(new Vector2(700, 150), 0.5f).SetEase(Ease.OutBack);
 
-        this.dialogue = dialogue;
+        this.dialogue = dialogue.GetDialogue(out onEnd);
 
         PlayerController.instance.Lock();
         CameraController.instance.Lock(dialogue.cameraPoint.position, dialogue.cameraDistance);
@@ -109,6 +112,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        onEnd?.Invoke();
         dialogue = null;
         InteractManager.instance.ShowPrompt("Talk");
 

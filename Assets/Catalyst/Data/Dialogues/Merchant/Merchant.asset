@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7398a43ee20d484f9148329fbada2d9, type: 3}
+  m_Name: Merchant
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Merchant
+    line: 'Ohoho! Hello there young one! '
+  - name: Merchant
+    line: Why yes! I can totally tell you the secret to getting into the cool hat
+      club!
+  - name: Merchant
+    line: To get into the Hat club you'll need to make a hat!
+  - name: Merchant
+    line: How do you make a hat? Well you'll need to use Blender!
+  - name: Merchant
+    line: 'How do you use Blender? WelI tell you what, you bring me 1,000,000 coins
+      and I''ll tell you! '
