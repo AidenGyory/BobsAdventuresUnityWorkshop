@@ -16,8 +16,7 @@ MonoBehaviour:
   - name: Merchant
     line: 'Ohoho! Hello there young one! '
   - name: Merchant
-    line: Why yes! I can tottaly tell you how a secert to getting into the cool hat
-      club!
+    line: Why yes! I can totally tell you a secret to getting into the cool hat club!
   - name: Merchant
     line: Secrets don't come cheap my friend! Bring me 1,000,000 coins and I'll tell
       you my secrets!
