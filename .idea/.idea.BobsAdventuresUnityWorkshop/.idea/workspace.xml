@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c91a5ff-b14f-4c7c-8f46-5a0cab2f078d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BobsAdventuresUnityWorkshop/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BobsAdventuresUnityWorkshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BobsAdventuresUnityWorkshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Catalyst/Scripts/Dialogue/Condition/CoinCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Catalyst/Scripts/Dialogue/Condition/CoinCondition.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Catalyst/Scripts/Interactables/CurrentCoins.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QJfzcqg1PW0F8nniKjV0TGz8v5" />
@@ -101,7 +105,7 @@
       <workItem from="1687055158527" duration="625000" />
       <workItem from="1688102946084" duration="5000" />
       <workItem from="1688103013923" duration="4000" />
-      <workItem from="1688261014438" duration="604000" />
+      <workItem from="1688261014438" duration="2837000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7398a43ee20d484f9148329fbada2d9, type: 3}
+  m_Name: Merchant_coins
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Merchant
+    line: 'Ohoho! Yes! that''s a lot of dough! '
+  - name: Merchant
+    line: 'How did you get some many coins? '
+  - name: Merchant
+    line: '...It doesn''t matter.. Here is my Secret! take this Itme to the Creativity
+      Guardians! '
+  - name: Merchant
+    line: If you can solve their riddles, they will give you the power of creation!
