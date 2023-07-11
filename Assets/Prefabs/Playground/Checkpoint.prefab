@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 5866300008914615624, guid: f7508d0e4288375428362b3aa8d9ef71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7508d0e4288375428362b3aa8d9ef71, type: 3}
 --- !u!4 &6226066711767039581 stripped
