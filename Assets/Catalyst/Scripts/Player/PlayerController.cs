@@ -44,9 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && !locked)
             {
-                animator.SetTrigger("Jump");
-                jumping = true;
-                movement.y = jumpHeight;
+                Jump(jumpHeight);
             }
             else if (cc.isGrounded)
             {
@@ -90,7 +88,17 @@ public class PlayerController : MonoBehaviour
 
         DoAnimation();
 
-        cc.Move(movement * this.speed * Time.deltaTime); //move, collisions handled in character controller
+        if (movement != Vector3.zero)
+        {
+            cc.Move(movement * this.speed * Time.deltaTime); //move, collisions handled in character controller
+        }
+    }
+
+    public void Jump(float jumpHeight)
+    {
+        animator.SetTrigger("Jump");
+        jumping = true;
+        movement.y = jumpHeight;
     }
 
     void DoAnimation()
@@ -117,5 +125,24 @@ public class PlayerController : MonoBehaviour
     public bool Locked()
     {
         return locked;
+    }
+
+    public void ChangePosition(Vector3 newPosition)
+    {
+        StopAllCoroutines();
+        StartCoroutine(LockForOneFrame(newPosition));
+    }
+
+    IEnumerator LockForOneFrame(Vector3 newPosition)
+    {
+        locked = true;
+        cc.enabled = false;
+        yield return new WaitForEndOfFrame();
+
+        transform.position = newPosition;
+
+        yield return new WaitForEndOfFrame();
+        locked = false;
+        cc.enabled = true;
     }
 }
