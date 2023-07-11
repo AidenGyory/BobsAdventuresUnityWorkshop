@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 32832261}
-  m_IndirectSpecularColor: {r: 0.28471857, g: 0.37128443, b: 0.49832577, a: 1}
+  m_IndirectSpecularColor: {r: 0.28471944, g: 0.37128547, b: 0.49831986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5064,6 +5064,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 762445472}
     m_Modifications:
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: openTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2128388147}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2128388147}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+      propertyPath: onPortalOpenStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 621005769995298072, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5119,6 +5187,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 621005769995298072, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
   m_PrefabInstance: {fileID: 1269880602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1269880604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 621005769995298055, guid: fc1cdd3054b7ff7408ed409ffa88679c, type: 3}
+  m_PrefabInstance: {fileID: 1269880602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34653fcc45e075488fd2b6d0c90c984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276923610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,6 +6648,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1269880604}
+          m_TargetAssemblyTypeName: PortalEffect, Assembly-CSharp
+          m_MethodName: OpenPortal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!65 &1564935287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7091,6 +7182,7 @@ Transform:
   - {fileID: 1353615294}
   - {fileID: 1004814620}
   - {fileID: 549406475}
+  - {fileID: 2128388151}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9167,6 +9259,124 @@ Transform:
   m_Father: {fileID: 1965393624}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2128388147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128388151}
+  - component: {fileID: 2128388150}
+  - component: {fileID: 2128388149}
+  - component: {fileID: 2128388148}
+  m_Layer: 0
+  m_Name: PortalCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2128388148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128388147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 1
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!81 &2128388149
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128388147}
+  m_Enabled: 1
+--- !u!20 &2128388150
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128388147}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &2128388151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128388147}
+  m_LocalRotation: {x: 0.025771432, y: -0.8691629, z: 0.045550846, w: 0.49174875}
+  m_LocalPosition: {x: -11.841938, y: -12.894772, z: -4.709198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672587292}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 6, y: -121, z: 0}
 --- !u!1 &2128978339
 GameObject:
   m_ObjectHideFlags: 0

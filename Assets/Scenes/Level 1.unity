@@ -958,6 +958,7 @@ GameObject:
   - component: {fileID: 697398635}
   - component: {fileID: 697398634}
   - component: {fileID: 697398636}
+  - component: {fileID: 697398637}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1038,11 +1039,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697398632}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.0000005, y: 2.25, z: 2.0000005}
   m_Center: {x: 0, y: 0, z: 0.000000007450581}
+--- !u!114 &697398637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697398632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5503d13afde544e8863d9a94e192a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &775400624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1068,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87aa7f69d62953f489d8554998caccf3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.626839
+      value: -17.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87aa7f69d62953f489d8554998caccf3, type: 3}
       propertyPath: m_LocalPosition.z
