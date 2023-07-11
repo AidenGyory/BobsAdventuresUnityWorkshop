@@ -8,9 +8,12 @@ public class HatCondition : Condition
 
     public override bool Evaluate()
     {
-        if (hatParent.childCount > 0)
+        foreach (Transform child in hatParent.transform)
         {
-            return hatParent.GetChild(0).gameObject.name.ToLower() == "hat";
+            if (child.gameObject.name.ToLower() == "hat")
+            {
+                return true;
+            }
         }
         return false;
     }

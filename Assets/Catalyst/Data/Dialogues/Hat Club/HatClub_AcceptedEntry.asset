@@ -31,3 +31,11 @@ MonoBehaviour:
     line: Please, come right through!!! Consider yourself a VIP of the Cool Hat Club!
   - name: Hat Goon #2
     line: Man, I wish my hat was that cool...
+  - name: Hat Goon #1
+    line: ...
+  - name: Hat Goon #2
+    line: ...?
+  - name: Hat Goon #1
+    line: 'Oh, what? you want us to turn the portal on? '
+  - name: Hat Goon #2
+    line: Yeah. I suppose we can do that! seeing as you have such a <b>cool hat!</b>
