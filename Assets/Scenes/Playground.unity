@@ -1233,6 +1233,10 @@ PrefabInstance:
       value: Bob
       objectReference: {fileID: 0}
     - target: {fileID: 8073446411890873337, guid: 18775d9e65b61044c9294377573d70f0, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073446411890873337, guid: 18775d9e65b61044c9294377573d70f0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
