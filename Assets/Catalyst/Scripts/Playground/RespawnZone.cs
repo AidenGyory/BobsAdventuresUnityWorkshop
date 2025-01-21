@@ -13,6 +13,8 @@ public class RespawnZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerController.instance.transform.SetParent(null);
+            PlayerController.instance.transform.localScale = Vector3.one;
             PlayerController.instance.ChangePosition(Checkpoint.hasCheckpointInScene ? Checkpoint.currentCheckpoint : defaultPos);
         }
     }

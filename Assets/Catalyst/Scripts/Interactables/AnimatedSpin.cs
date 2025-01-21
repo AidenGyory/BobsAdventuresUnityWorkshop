@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimateCoin : MonoBehaviour
+public class AnimatedSpin : MonoBehaviour
 {
     [SerializeField] private float upDownSpeed = 0.4f;
     [SerializeField] private float rotationSpeed = 360f;

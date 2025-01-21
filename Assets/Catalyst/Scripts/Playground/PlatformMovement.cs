@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class PlatformMovement : MonoBehaviour
+public class PlatformMovement : Platform
 {
     public float xDirection = 0f;
     public float yDirection = 0f;
@@ -12,71 +11,101 @@ public class PlatformMovement : MonoBehaviour
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
+
     private bool isMoving = false;
-    private GameObject player; // Reference to the player object
+
+    [Header("Ghost Platform")]
+    public GameObject ghostPlatform; // Reference to the ghost platform
 
     private void Start()
     {
         startPosition = transform.position;
         targetPosition = startPosition + new Vector3(xDirection, yDirection, zDirection);
+
+        UpdateGhostPlatform(); // Ensure ghost platform is set up at start
         StartMovement();
     }
 
-    private void Update()
+    private void OnValidate()
+    {
+        // Update target position and ghost platform when values are changed in the inspector
+        targetPosition = transform.position + new Vector3(xDirection, yDirection, zDirection);
+        UpdateGhostPlatform();
+    }
+
+    private void FixedUpdate()
     {
         if (isMoving)
         {
-            MoveObject();
+            MovePlatform();
         }
     }
 
-    private void MoveObject()
+    private void MovePlatform()
     {
-        // Calculate the new position based on the direction, speed, and time
+        // Calculate the movement step and move the platform
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+        Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, step);
 
-        // Check if the object has reached the target position
+        // Update the platform's position
+        transform.position = newPosition;
+
+        // Check if platform reached the target
         if (transform.position == targetPosition)
         {
             isMoving = false;
-            Invoke("StartMovement", pauseAmount);
+            Invoke(nameof(StartMovement), pauseAmount);
         }
     }
 
     private void StartMovement()
     {
         isMoving = true;
-        if (targetPosition == startPosition)
+
+        // Swap between start and target positions
+        targetPosition = (targetPosition == startPosition)
+            ? startPosition + new Vector3(xDirection, yDirection, zDirection)
+            : startPosition;
+    }
+
+    private void UpdateGhostPlatform()
+    {
+        if (ghostPlatform != null)
         {
-            targetPosition = startPosition + new Vector3(xDirection, yDirection, zDirection);
+            // Update the ghost platform's position
+            ghostPlatform.transform.position = targetPosition;
         }
-        else
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (ghostPlatform != null)
         {
-            targetPosition = startPosition;
+            DrawAnimatedDashedLine(transform.position, ghostPlatform.transform.position, 0.5f);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void DrawAnimatedDashedLine(Vector3 start, Vector3 end, float dashLength)
     {
-        if (other.CompareTag("Player"))
-        {
-            player = other.gameObject;
-            player.transform.parent = transform; // Parent the player to the platform
-        }
-    }
+        // Calculate the total distance and direction
+        float totalDistance = Vector3.Distance(start, end);
+        Vector3 direction = (end - start).normalized;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") && player == other.gameObject)
+        // Animation offset using time
+        float animationOffset = (Time.realtimeSinceStartup * speed / 2) % (dashLength * 4);
+
+        // Draw the dashes
+        for (float i = animationOffset; i < totalDistance; i += dashLength * 4)
         {
-            player.transform.parent = null; // Unparent the player from the platform
-            player = null;
+            Vector3 dashStart = start + direction * i;
+            Vector3 dashEnd = dashStart + direction * Mathf.Min(dashLength, totalDistance - i);
+
+            // Limit to the end point of the line
+            if ((dashStart - start).magnitude > totalDistance) break;
+
+            Gizmos.color = Color.cyan; // Customize the color
+            Gizmos.DrawLine(dashStart, dashEnd);
         }
     }
 }
-
-
-
-
 

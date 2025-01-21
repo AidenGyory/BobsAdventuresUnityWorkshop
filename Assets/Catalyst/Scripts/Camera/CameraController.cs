@@ -26,6 +26,10 @@ public class CameraController : MonoBehaviour
     {
         defaultDistance = distance;
         player = GameObject.FindWithTag("Player").transform;
+
+        //Lock the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -35,11 +39,11 @@ public class CameraController : MonoBehaviour
         {
             lookPosition = player.position;
         }
-        if (Input.GetMouseButton(0))
-        {
-            currentRotation.x += Input.GetAxis("Mouse X") * rotateSpeed.x * Time.deltaTime * 10;
-            currentRotation.y += Input.GetAxis("Mouse Y") * rotateSpeed.y * Time.deltaTime * 10;
-        }
+        
+        currentRotation.x += Input.GetAxis("Mouse X") * rotateSpeed.x * Time.deltaTime * 10;
+        currentRotation.y += Input.GetAxis("Mouse Y") * rotateSpeed.y * Time.deltaTime * 10;
+        currentRotation.y = Mathf.Clamp(currentRotation.y, -90, 90);
+        
 
         RaycastHit hit;
         bool raycast = Physics.Raycast(player.position + offset, -transform.forward, out hit, distance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);

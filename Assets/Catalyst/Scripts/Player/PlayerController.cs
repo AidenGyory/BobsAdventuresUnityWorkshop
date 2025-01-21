@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [RequireComponent(typeof(CharacterController))] //auto add a character controller if the gameobject doesn't have one
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
     CharacterController cc; //set in start function (through code)
 
+    public CharacterController Controller => cc;
+
     [Header("Movement Parameters")]
     public float speed = 5;
     public float gravity = 10;
@@ -18,14 +21,34 @@ public class PlayerController : MonoBehaviour
 
     private bool jumping = false; //true when player is jumping
     private Vector3 movement = new Vector3(); //not set by user
+    private Vector3 jumpBoost = Vector3.zero; // Stores horizontal jump boost
     bool locked = false;
     public static PlayerController instance;
     PlayerInput playerInput;
+
+    public Platform attachedPlatform;
 
     private void Awake()
     {
         instance = this;
     }
+
+    public void SetMeshVisibility(bool visible)
+    {
+        SkinnedMeshRenderer meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (meshRenderer != null)
+        {
+            meshRenderer.shadowCastingMode = visible
+                ? UnityEngine.Rendering.ShadowCastingMode.On
+                : UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+        }
+    }
+
+    public void SetRotation(Quaternion rotation)
+    {
+        transform.rotation = rotation;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +61,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Exit play mode when pressing escape, also quit application in build
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EditorApplication.isPlaying = false;
+            Application.Quit();
+        }
+
         bool running = false;
 
         if (!jumping)
@@ -49,13 +79,13 @@ public class PlayerController : MonoBehaviour
             else if (cc.isGrounded)
             {
                 movement.y = 0;
+                jumpBoost = Vector3.zero; // Reset boost on ground
             }
             else
             {
                 movement.y -= (jumpWeight * Time.deltaTime);
             }
             running = Input.GetKey(KeyCode.LeftShift);
-
         }
         else
         {
@@ -63,6 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetTrigger("Landed");
                 jumping = false;
+                jumpBoost = Vector3.zero; // Reset boost on landing
             }
             else
             {
@@ -88,9 +119,11 @@ public class PlayerController : MonoBehaviour
 
         DoAnimation();
 
-        if (movement != Vector3.zero)
+        Vector3 finalMovement = movement + jumpBoost; // Add jump boost to movement
+
+        if (finalMovement != Vector3.zero)
         {
-            cc.Move(movement * this.speed * Time.deltaTime); //move, collisions handled in character controller
+            cc.Move(finalMovement * this.speed * Time.deltaTime); //move, collisions handled in character controller
         }
     }
 
@@ -99,6 +132,16 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Jump");
         jumping = true;
         movement.y = jumpHeight;
+
+        // Apply a horizontal boost to jump
+        Vector3 horizontalVelocity = new Vector3(movement.x, 0, movement.z);
+
+        if (horizontalVelocity.magnitude > 0)
+        {
+            float boostMultiplier = Input.GetKey(KeyCode.LeftShift) ? 2f : 1f; // Sprinting gives a stronger horizontal boost
+            jumpBoost = horizontalVelocity.normalized * boostMultiplier;
+
+        }
     }
 
     void DoAnimation()
@@ -108,7 +151,7 @@ public class PlayerController : MonoBehaviour
         if (isWalking)
         {
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(movement.x, 0, movement.z), Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime*5);
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 5);
         }
     }
     public void Lock()
@@ -135,6 +178,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator LockForOneFrame(Vector3 newPosition)
     {
+        attachedPlatform = null;
+
         locked = true;
         cc.enabled = false;
         yield return new WaitForEndOfFrame();
